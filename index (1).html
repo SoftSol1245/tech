@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Techsperts Software Solutions | Custom Software Development Company Hyderabad</title>
+<meta name="description" content="Techsperts Software Solutions is a digital driven IT solutions provider in Hyderabad, India. Custom software development, AI, cloud, mobile apps, QA testing, digital marketing and IT consulting." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#f6f8fc;
+    --bg-2:#eef2f9;
+    --bg-3:#e6ecf6;
+    --panel:#ffffff;
+    --panel-soft:rgba(255,255,255,.75);
+    --stroke:rgba(15,26,51,0.10);
+    --stroke-strong:rgba(15,26,51,0.16);
+    --txt:#0f1a33;
+    --muted:#5a6785;
+    --accent:#0e7490;
+    --accent-2:#4f46e5;
+    --accent-3:#2563eb;
+    --grad:linear-gradient(120deg,#0e7490 0%,#4f46e5 55%,#2563eb 100%);
+    --grad-soft:linear-gradient(120deg,rgba(14,116,144,.12),rgba(79,70,229,.12));
+    --radius:18px;
+    --maxw:1180px;
+    --shadow:0 12px 34px rgba(15,26,51,.07);
+    --shadow-lg:0 26px 60px rgba(15,26,51,.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    background:var(--bg);
+    color:var(--txt);
+    line-height:1.6;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+    /* subtle diamond weave over diamond white */
+    background-image:
+      linear-gradient(135deg, rgba(15,26,51,.028) 25%, transparent 25%, transparent 75%, rgba(15,26,51,.028) 75%),
+      linear-gradient(135deg, rgba(15,26,51,.028) 25%, transparent 25%, transparent 75%, rgba(15,26,51,.028) 75%);
+    background-position:0 0, 22px 22px;
+    background-size:44px 44px;
+  }
+  h1,h2,h3,h4,.brand-name,.stat-num{font-family:'Space Grotesk','Poppins',sans-serif}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .accent{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--accent);font-weight:600;margin-bottom:16px;
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--grad);border-radius:2px}
+  section{padding:96px 0;position:relative}
+  .section-head{max-width:720px;margin-bottom:56px}
+  .section-head h2{font-size:clamp(1.8rem,3.6vw,2.7rem);line-height:1.15;font-weight:700;letter-spacing:-.02em}
+  .section-head p{color:var(--muted);margin-top:16px;font-size:1.02rem}
+
+  /* ---------- Header ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    transition:background .35s,backdrop-filter .35s,border-color .35s,box-shadow .35s;
+    border-bottom:1px solid transparent;
+  }
+  header.scrolled{
+    background:rgba(246,248,252,.86);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--stroke);
+    box-shadow:0 6px 24px rgba(15,26,51,.05);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .logo{
+    width:44px;height:44px;border-radius:12px;background:var(--grad);
+    display:grid;place-items:center;font-weight:800;font-family:'Space Grotesk',sans-serif;
+    font-size:1.25rem;color:#fff;box-shadow:0 8px 22px rgba(79,70,229,.28);flex:none;
+  }
+  .brand-text{display:flex;flex-direction:column;line-height:1.05}
+  .brand-name{font-weight:700;font-size:1.02rem;letter-spacing:.01em;color:var(--txt)}
+  .brand-sub{font-size:.66rem;letter-spacing:.19em;text-transform:uppercase;color:var(--muted);font-weight:500}
+  .menu{display:flex;align-items:center;gap:34px}
+  .menu a{font-size:.9rem;color:var(--muted);font-weight:500;position:relative;transition:color .25s}
+  .menu a::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--grad);transition:width .3s;border-radius:2px}
+  .menu a:hover{color:var(--txt)}
+  .menu a:hover::after{width:100%}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    padding:13px 26px;border-radius:999px;font-weight:600;font-size:.9rem;
+    border:1px solid transparent;cursor:pointer;transition:transform .25s,box-shadow .25s,background .25s;white-space:nowrap;
+  }
+  .btn-primary{background:var(--grad);color:#fff;box-shadow:0 10px 26px rgba(79,70,229,.28)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(79,70,229,.42)}
+  .btn-ghost{border-color:var(--stroke-strong);color:var(--txt);background:var(--panel-soft)}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+  .btn-quote{background:#ffffff;color:var(--accent-3);border:1.5px solid var(--accent-3);box-shadow:0 8px 20px rgba(37,99,235,.16)}
+  .btn-quote:hover{background:#ffffff;border-color:var(--accent-2);color:var(--accent-2);transform:translateY(-2px);box-shadow:0 14px 30px rgba(37,99,235,.28)}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
+  .burger span{width:24px;height:2px;background:var(--txt);border-radius:2px;transition:.3s}
+
+  /* ---------- Hero ---------- */
+  .hero{padding-top:170px;padding-bottom:110px;position:relative;overflow:hidden}
+  .hero::before{
+    content:"";position:absolute;top:-280px;right:-180px;width:720px;height:720px;
+    background:radial-gradient(circle,rgba(79,70,229,.14),transparent 62%);filter:blur(20px);z-index:-1;
+  }
+  .hero::after{
+    content:"";position:absolute;bottom:-320px;left:-220px;width:680px;height:680px;
+    background:radial-gradient(circle,rgba(14,116,144,.12),transparent 62%);filter:blur(20px);z-index:-1;
+  }
+  .grid-bg{
+    position:absolute;inset:0;z-index:-2;opacity:.6;
+    background-image:linear-gradient(rgba(15,26,51,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(15,26,51,.05) 1px,transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(ellipse at 50% 0%,#000 30%,transparent 78%);
+    mask-image:radial-gradient(ellipse at 50% 0%,#000 30%,transparent 78%);
+  }
+  .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center}
+  .hero h1{font-size:clamp(2.1rem,5vw,3.55rem);line-height:1.06;font-weight:700;letter-spacing:-.025em;color:var(--txt)}
+  .hero p.lead{color:var(--muted);font-size:1.08rem;margin:24px 0 34px;max-width:560px}
+  .hero-cta{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+  .hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:40px}
+  .tag{
+    font-size:.76rem;letter-spacing:.05em;color:var(--muted);
+    border:1px solid var(--stroke);background:var(--panel);
+    padding:7px 15px;border-radius:999px;box-shadow:var(--shadow);
+  }
+  .hero-card{
+    background:var(--panel);
+    border:1px solid var(--stroke);border-radius:26px;padding:30px;
+    box-shadow:var(--shadow-lg);position:relative;
+  }
+  .hero-card .card-top{display:flex;align-items:center;gap:12px;margin-bottom:22px}
+  .pulse{width:11px;height:11px;border-radius:50%;background:var(--accent-2);box-shadow:0 0 0 0 rgba(79,70,229,.5);animation:pulse 2.2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(79,70,229,.45)}70%{box-shadow:0 0 0 14px rgba(79,70,229,0)}100%{box-shadow:0 0 0 0 rgba(79,70,229,0)}}
+  .hero-card h3{font-size:1rem;font-weight:600}
+  .hero-card .card-top small{color:var(--muted);font-size:.75rem;display:block}
+  .mini-list{display:grid;gap:14px}
+  .mini{display:flex;gap:14px;align-items:flex-start;padding:15px;border-radius:14px;background:var(--bg-2);border:1px solid var(--stroke)}
+  .mini .dot{width:34px;height:34px;border-radius:10px;background:rgba(79,70,229,.12);display:grid;place-items:center;color:var(--accent-2);flex:none;font-size:1rem}
+  .mini b{display:block;font-size:.9rem;font-weight:600;color:var(--txt)}
+  .mini span{font-size:.79rem;color:var(--muted)}
+
+  /* ---------- Trust strip ---------- */
+  .trust{border-top:1px solid var(--stroke);border-bottom:1px solid var(--stroke);padding:30px 0;background:var(--panel-soft)}
+  .trust-row{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;align-items:center}
+  .trust-item{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:.86rem}
+  .trust-item b{color:var(--txt);font-size:1.35rem;font-family:'Space Grotesk',sans-serif}
+
+  /* ---------- Three pillars ---------- */
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .pillar{
+    padding:34px 28px;border-radius:var(--radius);border:1px solid var(--stroke);
+    background:var(--panel);box-shadow:var(--shadow);
+    transition:transform .35s,border-color .35s,box-shadow .35s;
+  }
+  .pillar:hover{transform:translateY(-6px);border-color:rgba(79,70,229,.45);box-shadow:var(--shadow-lg)}
+  .pillar .num{font-family:'Space Grotesk',sans-serif;font-size:.8rem;color:var(--accent);letter-spacing:.2em}
+  .pillar h3{font-size:1.35rem;margin:16px 0 10px;font-weight:600}
+  .pillar p{color:var(--muted);font-size:.94rem}
+
+  /* ---------- Services ---------- */
+  .services{background:linear-gradient(180deg,transparent,var(--bg-2),transparent)}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .svc{
+    position:relative;padding:32px 28px;border-radius:var(--radius);
+    border:1px solid var(--stroke);background:var(--panel);box-shadow:var(--shadow);overflow:hidden;
+    transition:transform .35s,border-color .35s,box-shadow .35s;
+  }
+  .svc:hover{transform:translateY(-6px);border-color:rgba(79,70,229,.4);box-shadow:var(--shadow-lg)}
+  .svc .ic{
+    width:52px;height:52px;border-radius:14px;display:grid;place-items:center;
+    background:rgba(79,70,229,.10);color:var(--accent-2);font-size:1.4rem;margin-bottom:20px;
+    border:1px solid rgba(79,70,229,.20);
+  }
+  .svc h3{font-size:1.15rem;font-weight:600;margin-bottom:10px}
+  .svc p{color:var(--muted);font-size:.9rem}
+
+  /* ---------- Stats ---------- */
+  .stats-band{
+    border-radius:26px;border:1px solid var(--stroke);
+    background:var(--grad-soft);
+    padding:56px 40px;display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center;
+    box-shadow:var(--shadow);
+  }
+  .stat-num{font-size:2.7rem;font-weight:700;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .stat-label{color:var(--muted);font-size:.86rem;margin-top:6px}
+
+  /* ---------- Approach ---------- */
+  .approach{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .step{padding:28px 24px;border-radius:var(--radius);border:1px solid var(--stroke);background:var(--panel);box-shadow:var(--shadow)}
+  .step .k{font-family:'Space Grotesk',sans-serif;font-size:1.5rem;color:transparent;background:var(--grad);-webkit-background-clip:text;background-clip:text;font-weight:700}
+  .step h4{margin:14px 0 8px;font-size:1.02rem;font-weight:600}
+  .step p{color:var(--muted);font-size:.86rem}
+
+  /* ---------- FAQ ---------- */
+  .faq{max-width:860px;margin:0 auto}
+  .qa{border:1px solid var(--stroke);border-radius:14px;background:var(--panel);margin-bottom:14px;overflow:hidden;box-shadow:var(--shadow)}
+  .qa summary{
+    list-style:none;cursor:pointer;padding:20px 24px;font-weight:500;font-size:.98rem;
+    display:flex;justify-content:space-between;gap:18px;align-items:center;
+  }
+  .qa summary::-webkit-details-marker{display:none}
+  .qa summary::after{content:"+";font-size:1.4rem;color:var(--accent-2);transition:transform .3s;flex:none;line-height:1}
+  .qa[open] summary::after{transform:rotate(45deg)}
+  .qa .ans{padding:0 24px 22px;color:var(--muted);font-size:.92rem}
+
+  /* ---------- Contact ---------- */
+  .contact{background:linear-gradient(180deg,transparent,var(--bg-2))}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+  .info-card{display:grid;gap:16px}
+  .info{display:flex;gap:16px;padding:20px;border-radius:14px;border:1px solid var(--stroke);background:var(--panel);box-shadow:var(--shadow);align-items:flex-start}
+  .info .ic{width:44px;height:44px;border-radius:12px;background:rgba(79,70,229,.10);color:var(--accent-2);display:grid;place-items:center;flex:none;font-size:1.15rem;border:1px solid rgba(79,70,229,.20)}
+  .info b{display:block;font-size:.9rem;margin-bottom:4px;font-weight:600}
+  .info a,.info span{color:var(--muted);font-size:.9rem}
+  .info a:hover{color:var(--accent-2)}
+  form{display:grid;gap:16px;padding:32px;border-radius:22px;border:1px solid var(--stroke);background:var(--panel);box-shadow:var(--shadow-lg)}
+  .field{display:grid;gap:7px}
+  .field label{font-size:.8rem;color:var(--muted);font-weight:500}
+  .field input,.field textarea,.field select{
+    background:var(--bg-2);border:1px solid var(--stroke);border-radius:11px;
+    padding:13px 15px;color:var(--txt);font-family:inherit;font-size:.92rem;transition:border-color .25s,box-shadow .25s;
+  }
+  .field input::placeholder,.field textarea::placeholder{color:#9aa6c8}
+  .field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--accent-2);box-shadow:0 0 0 3px rgba(79,70,229,.14)}
+  .field textarea{resize:vertical;min-height:110px}
+  .form-note{font-size:.78rem;color:var(--muted)}
+
+  /* ---------- Footer ---------- */
+  footer{border-top:1px solid var(--stroke);padding:64px 0 28px;background:var(--panel-soft)}
+  .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:40px}
+  .foot-grid h4{font-size:.85rem;text-transform:uppercase;letter-spacing:.14em;color:var(--txt);margin-bottom:18px;font-weight:600}
+  .foot-grid p,.foot-grid a{color:var(--muted);font-size:.88rem}
+  .foot-links{display:grid;gap:10px}
+  .foot-links a:hover{color:var(--accent-2)}
+  .foot-bottom{margin-top:52px;padding-top:24px;border-top:1px solid var(--stroke);display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;color:var(--muted);font-size:.82rem}
+  .socials{display:flex;gap:12px}
+  .socials a{width:38px;height:38px;border-radius:10px;border:1px solid var(--stroke);display:grid;place-items:center;color:var(--muted);background:var(--panel);transition:.25s}
+  .socials a:hover{border-color:var(--accent-2);color:var(--accent-2);transform:translateY(-2px)}
+
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:1000px){
+    .hero-grid{grid-template-columns:1fr;gap:44px}
+    .pillars,.svc-grid{grid-template-columns:1fr 1fr}
+    .approach{grid-template-columns:1fr 1fr}
+    .stats-band{grid-template-columns:1fr 1fr;gap:36px}
+    .contact-grid{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:720px){
+    .menu{position:fixed;inset:76px 0 auto 0;background:rgba(246,248,252,.98);backdrop-filter:blur(16px);
+      flex-direction:column;gap:0;padding:12px 24px 26px;border-bottom:1px solid var(--stroke);
+      transform:translateY(-140%);transition:transform .38s;align-items:stretch;box-shadow:var(--shadow)}
+    .menu.open{transform:none}
+    .menu a{padding:15px 0;border-bottom:1px solid var(--stroke);width:100%}
+    .menu .btn{margin-top:16px}
+    .burger{display:flex}
+    .nav .btn-primary,.nav .btn-quote{display:none}
+    .pillars,.svc-grid,.approach,.stats-band,.foot-grid{grid-template-columns:1fr}
+    section{padding:72px 0}
+    .hero{padding-top:140px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header id="header">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Techsperts Software Solutions home">
+      <span class="logo">T</span>
+      <span class="brand-text">
+        <span class="brand-name">Techsperts</span>
+        <span class="brand-sub">Software Solutions</span>
+      </span>
+    </a>
+    <nav class="menu" id="menu">
+      <a href="#services">Services</a>
+      <a href="#approach">Approach</a>
+      <a href="#why">Why Us</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn-quote" href="#contact">Get a Quote</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="grid-bg"></div>
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <span class="eyebrow">Digital Driven IT Solutions Provider &amp; Trusted Partner</span>
+      <h1>We build software that <span class="accent">accelerates your business</span>.</h1>
+      <p class="lead">
+        Techsperts Software Solutions helps you achieve digital business acceleration and
+        enterprise modernization — end-to-end development from idea to product, for businesses
+        across industries and geographies.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#contact">Start Your Project →</a>
+        <a class="btn btn-ghost" href="#services">Explore Services</a>
+      </div>
+      <div class="hero-tags">
+        <span class="tag">Custom Software</span>
+        <span class="tag">AI &amp; Generative AI</span>
+        <span class="tag">Cloud &amp; DevOps</span>
+        <span class="tag">Mobile Apps</span>
+        <span class="tag">QA / Testing</span>
+        <span class="tag">IT Consulting</span>
+      </div>
+    </div>
+
+    <aside class="hero-card reveal">
+      <div class="card-top">
+        <span class="pulse"></span>
+        <div>
+          <h3>Consulting services to accelerate growth</h3>
+          <small>Our professional team simplifies complex business needs</small>
+        </div>
+      </div>
+      <div class="mini-list">
+        <div class="mini">
+          <span class="dot">◆</span>
+          <div><b>Production-grade ML &amp; LLM engineering</b><span>Machine learning, Generative AI, RAG and AI agents</span></div>
+        </div>
+        <div class="mini">
+          <span class="dot">◆</span>
+          <div><b>Enterprise RAG platforms</b><span>Grounded in your private business data</span></div>
+        </div>
+        <div class="mini">
+          <span class="dot">◆</span>
+          <div><b>Autonomous AI voice &amp; multi-agent workflows</b><span>Built around your business needs, from idea to implementation</span></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ TRUST STRIP ============ -->
+<div class="trust">
+  <div class="wrap trust-row">
+    <div class="trust-item"><b>4.6★</b> Rated by clients on Google</div>
+    <div class="trust-item"><b>15+</b> Years of industry experience</div>
+    <div class="trust-item"><b>45+</b> Countries served worldwide</div>
+    <div class="trust-item"><b>24/7</b> Cloud &amp; support coverage</div>
+  </div>
+</div>
+
+<!-- ============ PILLARS ============ -->
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">What drives us</span>
+      <h2>Digital engineering principles applied to every build</h2>
+      <p>We create fully connected systems so you can focus on your business — combining digital, technology and consulting expertise under one roof.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar reveal">
+        <span class="num">01</span>
+        <h3>Digital</h3>
+        <p>Accelerate innovation using cutting-edge technology and modern engineering practices.</p>
+      </div>
+      <div class="pillar reveal">
+        <span class="num">02</span>
+        <h3>Technology</h3>
+        <p>Providing solutions to the global market with a certified, experienced delivery team.</p>
+      </div>
+      <div class="pillar reveal">
+        <span class="num">03</span>
+        <h3>Consulting</h3>
+        <p>Acting as a tech-catalyst to simplify your complex business needs and accelerate growth.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Our Unique Services</span>
+      <h2>End-to-end IT services from idea to product</h2>
+      <p>We act as a tech-catalyst to simplify your complex business needs and accelerate growth.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc reveal">
+        <div class="ic">⌨</div>
+        <h3>Software Development Services</h3>
+        <p>Custom / enterprise web applications, information security, mobile application development, database systems, UI/UX design and full stack development.</p>
+      </div>
+      <div class="svc reveal">
+        <div class="ic">☁</div>
+        <h3>Digital &amp; Cloud Solutions</h3>
+        <p>Cloud solutions and implementation, API-led integrations, IoT middleware, IoT data pipelines, mobility and machine learning.</p>
+      </div>
+      <div class="svc reveal">
+        <div class="ic">◎</div>
+        <h3>IT Consulting</h3>
+        <p>Advanced software solutions — helping you choose the right technologies like AI, BI &amp; analytics, data science, NetSuite, SAP and Salesforce.</p>
+      </div>
+      <div class="svc reveal">
+        <div class="ic">✓</div>
+        <h3>QA / Testing Services</h3>
+        <p>Quality assurance with a 360° view of quality across systems and processes — test automation, functional testing and performance testing.</p>
+      </div>
+      <div class="svc reveal">
+        <div class="ic">⚙</div>
+        <h3>Cloud Services</h3>
+        <p>Strong skills with AWS, Azure and Google Cloud migration, DevOps, cloud infrastructure monitoring and 24/7 support for seamless digital transformation.</p>
+      </div>
+      <div class="svc reveal">
+        <div class="ic">📈</div>
+        <h3>Digital Marketing</h3>
+        <p>Online marketing across social media, email, pay-per-click and SEO — plus online reputation management and marketing automation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section>
+  <div class="wrap">
+    <div class="stats-band reveal">
+      <div><div class="stat-num" data-count="45" data-suffix="+">0</div><div class="stat-label">Countries Worldwide</div></div>
+      <div><div class="stat-num" data-count="15" data-suffix="+">0</div><div class="stat-label">Years of Excellence</div></div>
+      <div><div class="stat-num" data-count="200" data-suffix="+">0</div><div class="stat-label">Projects Delivered</div></div>
+      <div><div class="stat-num" data-count="98" data-suffix="%">0</div><div class="stat-label">Client Satisfaction</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ APPROACH ============ -->
+<section id="approach">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">How we work</span>
+      <h2>An agile process built for transparency</h2>
+      <p>Our development process follows agile methodologies and begins with understanding your business objectives.</p>
+    </div>
+    <div class="approach">
+      <div class="step reveal"><span class="k">01</span><h4>Discover</h4><p>We understand your business objectives and define clear technical requirements.</p></div>
+      <div class="step reveal"><span class="k">02</span><h4>Design</h4><p>Wireframing and architecture with intuitive, accessible UI/UX across platforms.</p></div>
+      <div class="step reveal"><span class="k">03</span><h4>Develop &amp; Test</h4><p>Agile sprints with continuous QA, automation and performance testing.</p></div>
+      <div class="step reveal"><span class="k">04</span><h4>Support</h4><p>Ongoing maintenance, updates, monitoring and scalability as you grow.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY US ============ -->
+<section id="why">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Why Techsperts</span>
+      <h2>An affordable offshore IT partner for the global market</h2>
+      <p>We serve clients across healthcare, fintech, manufacturing, retail, education and logistics, offering custom-made solutions aligned with industry-specific needs.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc reveal"><div class="ic">★</div><h3>Certified Experts</h3><p>A team of senior developers, architects, QA engineers and consultants with 15+ years of experience.</p></div>
+      <div class="svc reveal"><div class="ic">🔒</div><h3>Secure by Design</h3><p>Encryption, secure coding standards, regular audits and compliance with GDPR and HIPAA.</p></div>
+      <div class="svc reveal"><div class="ic">⇄</div><h3>Flexible Engagement</h3><p>Fixed price, time &amp; material or dedicated team models, tailored to your goals and budget.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head reveal" style="margin-left:auto;margin-right:auto;text-align:center">
+      <span class="eyebrow" style="justify-content:center">FAQ</span>
+      <h2>Frequently asked questions</h2>
+    </div>
+    <div class="faq">
+      <details class="qa reveal"><summary>What services does Techsperts Software Solutions offer?</summary><div class="ans">We provide end-to-end IT solutions, including custom software development, cloud services, mobile applications, UI/UX design, QA &amp; testing, digital marketing, data analytics and IT consulting across multiple platforms and industries.</div></details>
+      <details class="qa reveal"><summary>What industries do you specialize in?</summary><div class="ans">We serve clients across healthcare, fintech, manufacturing, retail, education, logistics and more, offering custom-made solutions aligned with industry-specific needs.</div></details>
+      <details class="qa reveal"><summary>How do you approach custom software development?</summary><div class="ans">Our development process follows agile methodologies and begins with understanding your business objectives, defining technical requirements, wireframing, development, testing and ongoing support.</div></details>
+      <details class="qa reveal"><summary>Do you provide cloud-based software solutions?</summary><div class="ans">Yes. We specialize in cloud-first development, migrations and management using AWS, Azure and Google Cloud, including DevOps integration and 24/7 cloud infrastructure support.</div></details>
+      <details class="qa reveal"><summary>Can you help modernize legacy systems?</summary><div class="ans">Absolutely. We analyze, refactor and upgrade legacy systems using modern technologies and architecture to improve performance, security and scalability.</div></details>
+      <details class="qa reveal"><summary>What technologies do you work with?</summary><div class="ans">Our tech stack includes Java, .NET, Python, React, Angular, Node.js, Flutter, Kotlin, Swift, PHP, Laravel and cloud platforms like AWS, Azure and GCP.</div></details>
+      <details class="qa reveal"><summary>What is your project delivery model?</summary><div class="ans">We offer flexible engagement models, including Fixed Price, Time &amp; Material and Dedicated Team models, customized to meet your project goals and budget.</div></details>
+      <details class="qa reveal"><summary>How do I get started with Techsperts?</summary><div class="ans">Simply reach out through our Contact section or email us at info@techsperts.co.in. Let's connect for a consultation where we evaluate your needs and present a customized plan of action.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Get in touch</span>
+      <h2>Let's build something great together</h2>
+      <p>Tell us about your project and our team will get back to you with a customized plan of action.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="info-card reveal">
+        <div class="info">
+          <span class="ic">📍</span>
+          <div>
+            <b>Office Address</b>
+            <span>3rd Floor, Sun Towers, Plot No.1097, Road No.36, near Peddamma Temple,<br>CBI Colony, Jubilee Hills, Hyderabad, Telangana – 500033, India</span>
+          </div>
+        </div>
+        <div class="info">
+          <span class="ic">📞</span>
+          <div>
+            <b>Business</b>
+            <a href="tel:+914066588179">+91 40 6658 8179</a>
+          </div>
+        </div>
+        <div class="info">
+          <span class="ic">✉</span>
+          <div>
+            <b>Email</b>
+            <a href="mailto:info@techsperts.co.in">info@techsperts.co.in</a>
+          </div>
+        </div>
+        <div class="info">
+          <span class="ic">🌐</span>
+          <div>
+            <b>Working Hours</b>
+            <span>Mon – Sat, 9:30 AM – 6:30 PM IST</span>
+          </div>
+        </div>
+      </div>
+
+      <form class="reveal" onsubmit="event.preventDefault();this.querySelector('.form-note').textContent='Thanks! Your enquiry has been noted. Please email info@techsperts.co.in to reach us directly.';this.reset();">
+        <div class="field">
+          <label for="name">Full Name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" required />
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@company.com" required />
+        </div>
+        <div class="field">
+          <label for="service">Service of Interest</label>
+          <select id="service" name="service">
+            <option>Software Development</option>
+            <option>Cloud &amp; DevOps</option>
+            <option>AI &amp; Data Science</option>
+            <option>Mobile Application Development</option>
+            <option>QA / Testing</option>
+            <option>Digital Marketing</option>
+            <option>IT Consulting</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="msg">Project Details</label>
+          <textarea id="msg" name="msg" placeholder="Briefly describe your requirement…"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit" style="justify-content:center">Send Enquiry</button>
+        <p class="form-note">Prefer email? Write to <a href="mailto:info@techsperts.co.in" style="color:var(--accent-2)">info@techsperts.co.in</a>.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#top" style="margin-bottom:18px">
+          <span class="logo">T</span>
+          <span class="brand-text">
+            <span class="brand-name">Techsperts</span>
+            <span class="brand-sub">Software Solutions</span>
+          </span>
+        </a>
+        <p>A digital driven IT solutions provider and trusted partner — helping businesses accelerate digital transformation and enterprise modernization across industries and geographies.</p>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <div class="foot-links">
+          <a href="#services">Services</a>
+          <a href="#approach">Approach</a>
+          <a href="#why">Why Us</a>
+          <a href="#faq">FAQ</a>
+        </div>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <div class="foot-links">
+          <a href="#services">Software Development</a>
+          <a href="#services">Cloud Solutions</a>
+          <a href="#services">IT Consulting</a>
+          <a href="#services">QA &amp; Testing</a>
+        </div>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <div class="foot-links">
+          <a href="mailto:info@techsperts.co.in">info@techsperts.co.in</a>
+          <a href="tel:+914066588179">+91 40 6658 8179</a>
+          <span style="color:var(--muted);font-size:.88rem">Sun Towers, Road No.36, Jubilee Hills, Hyderabad – 500033</span>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="yr"></span> Techsperts Software Solutions. All rights reserved.</span>
+      <div class="socials">
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="Twitter">𝕏</a>
+        <a href="#" aria-label="Facebook">f</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // sticky header
+  const header = document.getElementById('header');
+  addEventListener('scroll', () => header.classList.toggle('scrolled', scrollY > 20));
+
+  // mobile menu
+  const burger = document.getElementById('burger');
+  const menu = document.getElementById('menu');
+  burger.addEventListener('click', () => menu.classList.toggle('open'));
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+
+  // reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // animated counters
+  const counters = document.querySelectorAll('.stat-num');
+  const cio = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target, target = +el.dataset.count, suffix = el.dataset.suffix || '';
+      let cur = 0, step = Math.max(1, Math.ceil(target / 60));
+      const t = setInterval(() => {
+        cur += step;
+        if (cur >= target) { cur = target; clearInterval(t); }
+        el.textContent = cur + suffix;
+      }, 22);
+      cio.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(c => cio.observe(c));
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
